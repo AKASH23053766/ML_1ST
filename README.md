@@ -1,21 +1,17 @@
-import pandas as pd
+# Student Dataset Project
 
-student_id = list(range(1, 21))
-names = ["Student" + str(i) for i in range(1, 21)]
-ages = [16] * 20
-subjects = ["Math"] * 20
-scores = [80] * 20
+This project demonstrates how to create a simple student dataset using Python and Pandas.
 
-data = {
-    "ID": student_id,
-    "Name": names,
-    "Age": ages,
-    "Subject": subjects,
-    "Score": scores
-}
+## Features
+- Generates a dataset for 20 students  
+- Includes ID, Name, Age, Subject, Score  
+- Saves the dataset into a CSV file  
+- Displays the dataset in the terminal  
 
-df = pd.DataFrame(data)
+## Python File
+All source code is available in:
 
-print(df)
+**student_dataset.py**
 
-df.to_csv("students.csv", index=False)
+Run the file using:
+
