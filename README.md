@@ -1,36 +1,21 @@
-[student_dataset.py](https://github.com/user-attachments/files/23816131/student_dataset.py)
-# Simple student dataset
-
 import pandas as pd
-import os
 
-# Create folder to save CSV safely
-save_folder = "C:/Temp"  # Change this folder if you want
-if not os.path.exists(save_folder):
-    os.makedirs(save_folder)
+student_id = list(range(1, 21))
+names = ["Student" + str(i) for i in range(1, 21)]
+ages = [16] * 20
+subjects = ["Math"] * 20
+scores = [80] * 20
 
-# Create lists for 20 students
-ID = list(range(1, 21))
-Name = ["Student" + str(i) for i in range(1, 21)]
-Age = [16] * 20
-Subject = ["Math"] * 20
-Score = [80] * 20
-
-# Make the dataset
 data = {
-    "ID": ID,
-    "Name": Name,
-    "Age": Age,
-    "Subject": Subject,
-    "Score": Score
+    "ID": student_id,
+    "Name": names,
+    "Age": ages,
+    "Subject": subjects,
+    "Score": scores
 }
 
-students = pd.DataFrame(data)
+df = pd.DataFrame(data)
 
-# Print the table
-print(students)
+print(df)
 
-# Save CSV safely in a folder where Python has permission
-file_path = os.path.join(save_folder, "students.csv")
-students.to_csv(file_path, index=False)
-print(f"\nCSV file saved at: {file_path}")
+df.to_csv("students.csv", index=False)
